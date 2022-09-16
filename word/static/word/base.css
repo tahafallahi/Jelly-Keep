@@ -1,0 +1,38 @@
+body {
+    display: flex;
+    align-items: center;
+    padding-top: 100px; 
+    padding-left: 500px; 
+}
+
+
+.title {
+    margin-bottom: 40px;
+}
+
+.play-icon {
+    text-decoration: none;
+    width: 30px;
+    margin-right: 10px;
+    margin-top: 4px;
+    transform: rotate(45deg);
+}
+
+.word {
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+}
+
+.word-div {
+    display: flex;
+    align-items: top; 
+    margin-left: 40px;
+    margin-bottom: 10px;
+}
+
+.new-word {
+    font-size: 25px;
+    text-decoration: none;
+    color: rgb(255, 50, 90);
+}
