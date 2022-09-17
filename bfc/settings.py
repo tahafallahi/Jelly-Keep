@@ -28,7 +28,7 @@ IS_HEROKU = "DYNO" in os.environ
 SECRET_KEY = 'django-insecure-di)vh0)$=wo&f8b!qb$-h%#b2%^!6i=5nq1_fpja84q&-=6iy8'
 
 if IS_HEROKU:
-    ALLOWED_HOSTS = ["*"]
+    ALLOWED_HOSTS = ["https://betterfc.herokuapp.com"]
 else:
     ALLOWED_HOSTS = []
 
