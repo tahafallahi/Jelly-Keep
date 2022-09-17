@@ -35,7 +35,7 @@ else:
     ALLOWED_HOSTS = ["*"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if not IS_HEROKU:
+if IS_HEROKU:
     DEBUG = True
 
 
@@ -81,7 +81,7 @@ TEMPLATES = [
         },
     },
 ]
-
+not
 WSGI_APPLICATION = 'bfc.wsgi.application'
 
 
@@ -127,7 +127,7 @@ USE_TZ = True
 
 
 # Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/
+# https://docs.djangoproject.com/en/4.1/howto/static-files/not
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
