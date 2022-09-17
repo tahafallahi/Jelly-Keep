@@ -35,8 +35,7 @@ else:
     ALLOWED_HOSTS = ["*"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if IS_HEROKU:
-    DEBUG = True
+DEBUG = True
 
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
