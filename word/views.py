@@ -7,13 +7,13 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 from word import api
 
 
-class WordListView(LoginRequiredMixin, ListView):
+class WordListView(ListView):
     model = Word
     def get_queryset(self):
         queryset = super().get_queryset()
         return queryset.filter(user=self.request.user)
 
-class WordCreateView(LoginRequiredMixin, CreateView):
+class WordCreateView(CreateView):
     model = Word
     fields = ['title']
     success_url = reverse_lazy('word:list')
@@ -26,7 +26,7 @@ class WordCreateView(LoginRequiredMixin, CreateView):
         return super().form_valid(form)
 
 
-class WordDeleteView(LoginRequiredMixin, DeleteView):
+class WordDeleteView(DeleteView):
     model = Word
     success_url = reverse_lazy('word:list')
     def get_queryset(self):
