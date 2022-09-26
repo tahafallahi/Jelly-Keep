@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<div class="word-list-and-title">
+    <h1 class="title">Deleting</h1>
+
+    <div class="word-list">
+        {% if word_list %}
+            {% for word in word_list %}
+                <div class="word-and-icon">
+                    <img 
+                        class="pure-img play-icon"
+                        src="{% static 'word/images/delete_icon.png' %}"
+                        onclick="window.location = '{% url 'word:delete' word.id %}';"
+                    >
+                    <a class="word" href="{% url 'word:delete' word.id %}" >{{ word }}</a>
+                </div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="word-and-icon">
+            <img 
+                class="pure-img play-icon"
+                src="{% static 'word/images/add_icon.png' %}"
+                onclick="window.location = '{% url 'word:list' %}';"
+            >
+            <a class="add-new-word" href="{% url 'word:list' %}">Go back to words list</a>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
