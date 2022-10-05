@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% load static %}
-{% load static %} <link href="{% static 'word/word_list.css' %}" rel="stylesheet"> {% endblock %}
+{% block meta %} <link href="{% static 'word/word_list.css' %}" rel="stylesheet"> {% endblock %}
 {% block content %}
 
 <div class="word-list-and-title">
