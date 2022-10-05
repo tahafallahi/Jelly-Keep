@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load static %}
+{% load static %} <link href="{% static 'word/word_list.css' %}" rel="stylesheet"> {% endblock %}
 {% block content %}
 
 <div class="word-list-and-title">
@@ -10,7 +10,7 @@
             {% for word in word_list %}
                 <div class="word-and-icon">
                     <img 
-                        class="pure-img play-icon"
+                        class="pure-img"
                         src="{% static 'word/images/play_icon.png' %}"
                         onclick="var audio = new Audio('{{ word.audio_url }}'); audio.play();"
                     >
