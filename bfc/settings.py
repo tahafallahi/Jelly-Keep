@@ -22,8 +22,7 @@ else:
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-if not IS_HEROKU:
-    DEBUG = True
+DEBUG = True
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
 # Application definition
