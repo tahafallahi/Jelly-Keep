@@ -7,7 +7,7 @@ def get_page_url(word):
     params = {'q':word}
     url = requests.get('https://www.oxfordlearnersdictionaries.com/search/english/', params=params, headers=headers).request.url
     if 'spellcheck' in url:
-        return 'spellcheck'
+        return False
     else:
         return url
 

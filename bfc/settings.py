@@ -3,7 +3,6 @@ import dj_database_url
 import os
 from django.test.runner import DiscoverRunner
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -18,7 +17,7 @@ SECRET_KEY = 'django-insecure-di)vh0)$=wo&f8b!qb$-h%#b2%^!6i=5nq1_fpja84q&-=6iy8
 if IS_HEROKU:
     ALLOWED_HOSTS = ["*"]
 else:
-    ALLOWED_HOSTS = []
+    ALLOWED_HOSTS = ["*"]
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -69,16 +68,16 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'bfc.wsgi.application'
 
-if 'DATABASE_URL' in os.environ:
-    import dj_database_url
-    DATABASES = {'default': dj_database_url.config()}
+#if 'DATABASE_URL' in os.environ:
+#    import dj_database_url
+#    DATABASES = {'default': dj_database_url.config()}
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'bfc',
-#     }
-# }
+DATABASES = {
+     'default': {
+         'ENGINE': 'django.db.backends.postgresql',
+         'NAME': 'bfc',
+         }
+     }
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -113,6 +112,10 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_DIRS = [
+    (BASE_DIR / 'static')
+]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 

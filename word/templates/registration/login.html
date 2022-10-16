@@ -1,6 +1,10 @@
 {% extends 'base.html' %}
+{% load static %}
 {% block title %}
     Login
+{% endblock %}
+{% block head %}
+<link rel="stylesheet" href="{% static 'registration/login.css' %}">
 {% endblock %}
 {% block content %}
 
@@ -10,8 +14,9 @@
 <div class="form-box">
     <form class="form" action="{% url 'login' %}" method="post">
         {% csrf_token %}
-        {{ form  }}
-        <input type="submit" value="Login">
+        {{ form.username }}
+        {{ form.password }}
+        <input class=" submit-button" type="submit" value="Login">
         <input type="hidden" name ="next" value="{{ next }}">
     </form>
 </div>
