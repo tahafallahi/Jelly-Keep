@@ -72,9 +72,6 @@ if IS_HEROKU:
         import dj_database_url
         DATABASES = {'default': dj_database_url.config()}
 else:
-    STATICFILES_DIRS = [
-        (BASE_DIR / 'static')
-    ]
     DATABASES = {
          'default': {
              'ENGINE': 'django.db.backends.postgresql',
@@ -118,6 +115,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
+STATICFILES_DIRS = [
+    (BASE_DIR / 'static')
+]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
