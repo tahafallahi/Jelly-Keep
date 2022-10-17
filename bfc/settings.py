@@ -18,13 +18,9 @@ if IS_HEROKU:
     ALLOWED_HOSTS = ["*"]
 else:
     ALLOWED_HOSTS = ["*"]
-
-# SECURITY WARNING: don't run with debug turned on in production!
-
-DEBUG = True
+    DEBUG = True
 
 CRISPY_TEMPLATE_PACK = 'uni_form'
-# Application definition
 
 INSTALLED_APPS = [
     'word.apps.WordConfig',
@@ -114,10 +110,6 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
-STATICFILES_DIRS = [
-    (BASE_DIR / 'static')
-]
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
