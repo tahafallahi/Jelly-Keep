@@ -67,17 +67,19 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bfc.wsgi.application'
-
-#if 'DATABASE_URL' in os.environ:
-#    import dj_database_url
-#    DATABASES = {'default': dj_database_url.config()}
-
-DATABASES = {
-     'default': {
-         'ENGINE': 'django.db.backends.postgresql',
-         'NAME': 'bfc',
+if IS_HEROKU:
+    if 'DATABASE_URL' in os.environ:
+        import dj_database_url
+        DATABASES = {'default': dj_database_url.config()}
+else:
+    DATABASES = {
+         'default': {
+             'ENGINE': 'django.db.backends.postgresql',
+             'NAME': 'bfc',
+             }
          }
-     }
+
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
