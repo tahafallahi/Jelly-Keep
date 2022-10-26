@@ -3,40 +3,33 @@
 {% block head %} <link href="{% static 'word/word_list.css' %}" rel="stylesheet"> {% endblock %}
 {% block content %}
 
-<div class="word-list-and-title">
-    <h1 class="title">The words</h1>
+<div class="content">
+    <h1 class="title">Jelly Keep</h1>
 
     <div class="word-list">
         {% if word_list %}
             {% for word in word_list %}
-                <div class="word-and-icon">
+                <div class="word-and-icons">
                     <img 
                         class="pure-img"
-                        src="{% static 'word/images/play_icon.png' %}"
+                        src="{% static 'word/images/play_button.png' %}"
                         onclick="var audio = new Audio('{{ word.audio_url }}'); audio.play();"
                     >
-                    <a class="word" href="{{ word.dict_url }}" target="_blank">{{ word }}</a>
+                    <p class="word-title">{{ word }}</p>
+                    <img
+                        class="pure-img play-icon"
+                        src="{% static 'word/images/type_button.svg' %}"
+                        onclick=""
+                    >           
+                    <img
+                        class="pure-img play-icon"
+                        src="{% static 'word/images/dic_button.svg' %}"
+                        onclick="window.open('{{ word.dict_url }}', '_blank').focus();"
+                    >
                 </div>
             {% endfor %}
+            
         {% endif %}
-
-        <div class="word-and-icon">
-            <img 
-                class="pure-img play-icon"
-                src="{% static 'word/images/add_icon.png' %}"
-                onclick="window.location = '{% url 'word:create' %}';"
-            >
-            <a class="add-new-word" href="{% url 'word:create' %}">Add new word!</a>
-        </div>
-
-        <div class="word-and-icon">
-            <img 
-                class="pure-img play-icon"
-                src="{% static 'word/images/delete_icon.png' %}"
-                onclick="window.location = '{% url 'word:delete_list' %}';"
-            >
-            <a class="delete-word" href="{% url 'word:delete_list' %}">Delete words!</a>
-        </div>
     </div>
 </div>
 
