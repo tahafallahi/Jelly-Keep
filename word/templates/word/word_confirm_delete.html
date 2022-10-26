@@ -1,8 +1,16 @@
 {% extends 'base.html' %}
+{% load static %}
+{% block head %}
+<link rel="stylesheet" href={% static 'word/word_confirm_delete.css' %}>
+{% endblock %}
 {% block content %}
-<h1>Delete "{{ object }}"?</h1>
-<form action="" method="post">
-    {% csrf_token %}
-    <input type="submit" value="Delete">
-</form>
+<div class="title">
+    <p>Delete "{{ object }}"?</p>
+</div>
+<div class="form-box">
+    <form class="form" action="" method="post">
+        {% csrf_token %}
+        <input class="button" type="submit" value="Delete">
+    </form>
+</div>
 {% endblock %}
