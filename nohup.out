@@ -144,3 +144,20 @@ Not Found: /delete/17/
 [28/Oct/2022 23:11:53] "GET /static/word/images/dic_button.svg HTTP/1.1" 304 0
 [28/Oct/2022 23:11:53] "GET /static/word/images/type_button.svg HTTP/1.1" 304 0
 [28/Oct/2022 23:11:53] "GET /static/word/images/play_button.png HTTP/1.1" 304 0
+[28/Oct/2022 23:20:03] "GET / HTTP/1.1" 200 2131
+[28/Oct/2022 23:20:03] "GET /static/word/word_list.css HTTP/1.1" 200 1532
+[28/Oct/2022 23:20:03] "GET /static/word/images/type_button.svg HTTP/1.1" 304 0
+[28/Oct/2022 23:20:03] "GET /static/word/images/play_button.png HTTP/1.1" 304 0
+[28/Oct/2022 23:20:03] "GET /static/word/images/dic_button.svg HTTP/1.1" 304 0
+[28/Oct/2022 23:20:24] "GET / HTTP/1.1" 200 2131
+[28/Oct/2022 23:20:24] "GET /static/word/word_list.css HTTP/1.1" 200 1532
+[28/Oct/2022 23:20:24] "GET /static/word/images/type_button.svg HTTP/1.1" 304 0
+[28/Oct/2022 23:20:24] "GET /static/word/images/dic_button.svg HTTP/1.1" 304 0
+[28/Oct/2022 23:20:24] "GET /static/word/images/play_button.png HTTP/1.1" 304 0
+Performing system checks...
+
+System check identified no issues (0 silenced).
+October 28, 2022 - 22:52:22
+Django version 4.1, using settings 'bfc.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CONTROL-C.
