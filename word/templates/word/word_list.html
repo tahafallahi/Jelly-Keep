@@ -16,18 +16,18 @@
             {% for word in word_list %}
                 <div class="word-and-icons">
                     <img 
-                        class="pure-img"
+                        class="pure-img play-icon"
                         src="{% static 'word/images/play_button.png' %}"
                         onclick="var audio = new Audio('{{ word.audio_url }}'); audio.play();"
                     >
                     <p class="word-title">{{ word }}</p>
                     <img
-                        class="pure-img play-icon"
+                        class="pure-img type-icon"
                         src="{% static 'word/images/type_button.svg' %}"
                         onclick=""
                     >           
                     <img
-                        class="pure-img play-icon"
+                        class="pure-img dic-icon"
                         src="{% static 'word/images/dic_button.svg' %}"
                         onclick="window.open('{{ word.dict_url }}', '_blank').focus();"
                     >
@@ -37,8 +37,12 @@
         <p class="no-word-massage">There is no words in your list</p>
     {% endif %}
     <div class="buttons">
+        <a href="{% url 'word:create' %}">
         <input class="new-word-button" type="button" value="Add new word">
+        </a>
+        <a href="{% url 'word:delete_list' %}">
         <input class="delete-words-button" type="button" value="Delete words">
+        </a>
     </div>
     </div>
 </div>
