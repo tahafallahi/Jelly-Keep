@@ -1,10 +1,11 @@
 html {
 }
+
 body {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 100%;
+    height: 100vh;
     background: #060606;
 }
 
@@ -25,7 +26,8 @@ body {
     letter-spacing: 0em;
     text-align: left;
     color: #B84343;
-    font-family: system-ui;
+    font-family: 'Dancing Script', cursive;
+    font-weight: 700;
 }
 
 .word-list {
