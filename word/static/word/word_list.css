@@ -63,10 +63,11 @@ body {
     display: grid;
     grid-auto-flow: column;
     grid-gap: 24px;
+    margin-top: 10px;
 }
 
 .new-word-button {
-    height: 63px;
+    height: 50px;
     width: 310px;
     border: none;
     border-radius: 4px;
@@ -79,7 +80,7 @@ body {
 }
 
 .delete-words-button {
-    height: 63px;
+    height: 50px;
     width: 247px;
     border-radius: 4px;
     border: none;
