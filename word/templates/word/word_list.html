@@ -32,9 +32,14 @@
                         onclick="window.open('{{ word.dict_url }}', '_blank').focus();"
                     >
                 </div>
-            {% endfor %}
-            
-        {% endif %}
+        {% endfor %}
+    {% else %}
+        <p class="no-word-massage">There is no words in your list</p>
+    {% endif %}
+    <div class="buttons">
+        <input class="new-word-button" type="button" value="Add new word">
+        <input class="delete-words-button" type="button" value="Delete words">
+    </div>
     </div>
 </div>
 
