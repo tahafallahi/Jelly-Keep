@@ -9,6 +9,11 @@ body {
     background: #060606;
 }
 
+.no-word-massage {
+    color: rgb(100, 100, 100);
+    font-size: 25px;
+}
+
 .content {
     display: flex;
     flex-direction: column;
@@ -47,6 +52,38 @@ body {
 }
 
 .word-title {
+    font-size: 28px;
+    margin: 0;
+    flex: 2;
+    text-decoration: none;
+    color: white;
+}
+
+.buttons {
+    display: grid;
+    grid-auto-flow: column;
+    grid-gap: 24px;
+}
+
+.new-word-button {
+    height: 63px;
+    width: 310px;
+    border: none;
+    border-radius: 4px;
+    background-color: #2E8741;
+    font-size: 28px;
+    margin: 0;
+    flex: 2;
+    text-decoration: none;
+    color: white;
+}
+
+.delete-words-button {
+    height: 63px;
+    width: 247px;
+    border-radius: 4px;
+    border: none;
+    background: #872E2E;
     font-size: 28px;
     margin: 0;
     flex: 2;
