@@ -1,0 +1,93 @@
+html {
+    height: 100%;
+}
+
+h1 {
+    margin-top: 10px;
+    margin-bottom: 7px;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(20, 0, 0);
+    height: 100%;
+    margin: 0;
+    justify-content: center;
+    align-items: center;
+}
+
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 500px;
+    height: 100px;
+    background-color: rgb(254, 214, 214);
+    border-color: rgb(254, 214, 214);
+    border-width: 4px;
+    border-bottom-width: 0;
+    border-style: solid;
+    font-size: 20px;
+    font-family: system-ui;
+    font-weight: 400;
+    text-align: center;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    height: 240px;
+    background-color: white;
+    border-color: rgb(149, 213, 255);
+    border-width: 4px;
+    border-top-width: 0;
+    border-style: solid;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.input {
+    border-color: rgb(220, 220, 220);
+    border-style: solid;
+    border-radius: 4px;
+    border-width: 2px;
+    width: 320px;
+    height: 40px;
+    font-size: 16px;
+    padding-left: 10px;
+    margin-top: 20px;
+}
+
+.input::placeholder {
+    font-size: 15px;
+}
+
+.input:focus {
+    outline: none;
+    box-shadow: 0 0 8px rgb(255, 184, 184);
+}
+
+
+
+.button {
+    background-color: rgb(22, 135, 210);
+    color: white;
+    font-size: 20px;
+    border-width: 0;
+    border-radius: 4px;
+    height: 50px;
+    width: 100%;
+    margin: auto;
+    margin-top: 35px;
+}
