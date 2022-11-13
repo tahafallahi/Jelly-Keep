@@ -1,6 +1,3 @@
-html {
-}
-
 body {
     display: flex;
     align-items: center;
@@ -52,6 +49,12 @@ body {
     margin-bottom: 22px;
 }
 
+.play-icon:hover, .dic-icon:hover, .type-icon:hover{
+    cursor: pointer;
+    filter: brightness(60%);
+    transition: filter 0.15s;
+}
+
 .word-title {
     font-size: 28px;
     margin: 0;
@@ -78,6 +81,18 @@ body {
     flex: 2;
     text-decoration: none;
     color: white;
+}
+
+.new-word-button:hover {
+    cursor: pointer;
+    background-color: #0E6721; 
+    transition: background-color 0.15s;
+}
+
+.delete-words-button:hover {
+    cursor: pointer;
+    background-color: #670E0E; 
+    transition: background-color 0.15s;
 }
 
 .delete-words-button {

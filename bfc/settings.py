@@ -2,25 +2,20 @@ from pathlib import Path
 import dj_database_url
 import os
 from django.test.runner import DiscoverRunner
+from environs import Env
+
+env = Env()
+env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+ALLOWED_HOSTS=['127.0.0.1', 'localhost']
 
+CSRF_TRUSTED_ORIGINS = []
 
-CSRF_TRUSTED_ORIGINS = ["https://betterfc.herokuapp.com"]
+DEBUG = env.bool('DEBUG', default=False)
 
-IS_HEROKU = "DYNO" in os.environ
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-di)vh0)$=wo&f8b!qb$-h%#b2%^!6i=5nq1_fpja84q&-=6iy8'
-
-if IS_HEROKU:
-    ALLOWED_HOSTS = ["*"]
-else:
-    ALLOWED_HOSTS = ["*"]
-    DEBUG = True
-
-CRISPY_TEMPLATE_PACK = 'uni_form'
+SECRET_KEY = env.str('SECRET_KEY')
 
 INSTALLED_APPS = [
     'word.apps.WordConfig',
@@ -29,14 +24,15 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
     'crispy_forms',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -63,17 +59,10 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'bfc.wsgi.application'
-if IS_HEROKU:
-    if 'DATABASE_URL' in os.environ:
-        import dj_database_url
-        DATABASES = {'default': dj_database_url.config()}
-else:
-    DATABASES = {
-         'default': {
-             'ENGINE': 'django.db.backends.postgresql',
-             'NAME': 'bfc',
-             }
-         }
+
+DATABASES = {
+    'default': env.dj_db_url('DATABASE_URL')
+    }
 
 
 
@@ -93,9 +82,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# Internationalization
-# https://docs.djangoproject.com/en/4.1/topics/i18n/
-
 LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'Asia/Tehran'
@@ -105,26 +91,10 @@ USE_I18N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/4.1/howto/static-files/not
-
 STATIC_URL = 'static/'
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-# Test Runner Config
-class HerokuDiscoverRunner(DiscoverRunner):
-    """Test Runner for Heroku CI, which provides a database for you.
-    This requires you to set the TEST database (done for you by settings().)"""
-
-    def setup_databases(self, **kwargs):
-        self.keepdb = True
-        return super(HerokuDiscoverRunner, self).setup_databases(**kwargs)
-
-
-# Use HerokuDiscoverRunner on Heroku CI
-if "CI" in os.environ:
-    TEST_RUNNER = "bfc.settings.HerokuDiscoverRunner"
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
