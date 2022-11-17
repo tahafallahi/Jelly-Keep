@@ -9,7 +9,7 @@ env.read_env()
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-ALLOWED_HOSTS=['127.0.0.1', 'localhost']
+ALLOWED_HOSTS=['127.0.0.1', 'localhost', '152.89.44.213']
 
 CSRF_TRUSTED_ORIGINS = []
 
